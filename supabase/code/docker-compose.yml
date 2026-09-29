@@ -232,6 +232,11 @@ services:
   meta:
     image: supabase/postgres-meta:v0.89.0
     restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "node", "-e", "process.exit(0)" ]
+      timeout: 5s
+      interval: 30s
+      retries: 3
     depends_on:
       db:
         condition: service_healthy
