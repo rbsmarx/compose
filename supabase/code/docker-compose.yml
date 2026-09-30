@@ -174,7 +174,8 @@ services:
       RUN_JANITOR: true
 
   storage:
-    image: supabase/storage-api:v1.22.17
+   # image: supabase/storage-api:v1.22.17
+    image: supabase/storage-api:v1.74.0   # era v1.22.17
     restart: unless-stopped
     volumes:
       - ./volumes/storage:/var/lib/storage:z
